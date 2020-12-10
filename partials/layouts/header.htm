@@ -1,9 +1,16 @@
 <!-- Header -->
 <header id="layout-header">
-   <div class="container">
+   <div class="container navbar">
        LOGO
-       <input type="text" placeholder="Pesquisar...">
-       <img src="{{ 'assets/icons/search.svg'|theme }}" alt="">
+       <div>
+            <input type="text" placeholder="...">
+            <button>
+                <img src="{{ 'assets/icons/search.svg'|theme }}" alt="">
+            </button>
+            <button class="burguer-button">
+                <img src="{{ 'assets/icons/menu.svg'|theme }}" alt="">
+            </button>
+       </div>
    </div>
 </header>
 

@@ -1,3 +1,39 @@
 header#layout-header {
   background-color: $color-primary;
+  height: 90px;
+
+  .navbar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    div {
+      input {
+        border: none;
+        height: 30px;
+        border-bottom: solid 1px #7a7373;
+        background-color: transparent;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      button {
+        border: none;
+        background: transparent;
+        padding: 2px;
+        vertical-align: text-top;
+
+        &:focus {
+          outline: none;
+        }
+
+        &.burguer-button {
+          margin-left: 3rem;
+        }
+      }
+    }
+  }
 }
