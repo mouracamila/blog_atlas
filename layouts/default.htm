@@ -1,0 +1,14 @@
+description = "Default layout"
+==
+{% partial "layouts/_links" %}
+
+    {% partial "layouts/header" %}
+
+    <!-- Content -->
+    <section id="layout-content" class="container">
+        {% page %}
+    </section>
+
+    {% partial "layouts/footer" %}
+
+{% partial "layouts/_scripts" %}
