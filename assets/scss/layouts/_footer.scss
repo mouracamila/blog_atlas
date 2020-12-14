@@ -1,4 +1,39 @@
 footer#layout-footer{
     background-color: $color-primary;
     height: 29rem;
+
+    .content-footer{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .social-content{
+        display:flex;
+
+        li{
+            list-style: none;
+        }
+
+    }
+
+    .line{
+        border: 1px solid $color-secundary;
+
+    }
+
+    .box-footer{
+        display: flex;
+        justify-content: space-between;
+
+        .links{
+            a{
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+
+
 }
