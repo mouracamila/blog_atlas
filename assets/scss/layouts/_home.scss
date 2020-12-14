@@ -109,20 +109,22 @@ div#main {
             align-items: center;
             width: 5rem;
             height: 5rem;
+            background-color: $color-primary;
 
 
             & + .pag-num{
                 border: solid 1px $color-primary;
                 border-radius: 4px;
 
-                &:hover{
-                    background-color: rgb(228, 206, 9);
-                    border: solid 1px $color-secundary;
-                    border-radius: 50%;
-                    font-weight: bold;
-                }
-
             }
+
+            &:hover{
+                background-color: rgb(228, 206, 9);
+                border: solid 1px $color-secundary;
+                border-radius: 50%;
+                font-weight: bold;
+            }
+
 
             a {
                 color: black;
