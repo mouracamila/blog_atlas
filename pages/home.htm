@@ -1,8 +1,16 @@
 title = "Home"
 url = "/"
 layout = "default"
-==
+is_hidden = 0
 
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+==
 <div id="main">
 
     <section id="welcome">
@@ -40,6 +48,9 @@ layout = "default"
 
     <section id="container">
         <div class="content-articles">
+
+            {% partial 'blog/post-list' %}
+
             <div class="card-article">
                 <img class="card-article-img"src="http://placekitten.com/350/268" alt="">
                 <div class="content-text">
