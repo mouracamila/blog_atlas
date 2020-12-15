@@ -1,19 +1,43 @@
 footer#layout-footer{
-    background-color: $color-primary;
-    height: 29rem;
+        background-color: $color-primary;
+        height: 30rem;
+        display: flex;
+        align-items: flex-end;
+
 
     .content-footer{
         display: flex;
         flex-direction: column;
         height: 100%;
-        justify-content: center;
+        justify-content: flex-end;
+
+
+    }
+
+    .footer-logo{
+        margin-bottom: 2rem;
+        display: flex;
+
+
     }
 
     .social-content{
         display:flex;
+        margin-bottom: 3rem;
+
 
         li{
             list-style: none;
+            display: flex;
+            align-items: center;
+
+            &+li{
+                margin-left: 1rem;
+            }
+
+            a{
+                display: flex;
+            }
         }
 
     }
@@ -26,11 +50,21 @@ footer#layout-footer{
     .box-footer{
         display: flex;
         justify-content: space-between;
+        margin: 6rem 0 2rem;
+
+        .copyright{
+            font-size: 16px;
+            color: #8d8d8d;
+        }
 
         .links{
             a{
                 text-decoration: none;
                 color: black;
+
+                &+ a{
+                    margin-left: 2rem;
+                }
             }
         }
     }

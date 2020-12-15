@@ -55,28 +55,28 @@ div#main {
     justify-content: space-between;
 
         .content-articles {
-        .card-article {
-            display: flex;
-            max-width: 95rem;
+            .card-article {
+                display: flex;
+                max-width: 95rem;
 
-            .card-article-img {
-            height: auto;
-            }
+                .card-article-img {
+                height: auto;
+                }
 
-            .content-text {
-            align-self: flex-end;
-            padding: 1rem 3rem;
-            }
+                .content-text {
+                align-self: flex-end;
+                padding: 1rem 3rem;
+                }
 
-            .card-article-resume {
-            margin: 2rem 0;
-            line-height: 1.5em;
-            }
+                .card-article-resume {
+                margin: 2rem 0;
+                line-height: 1.5em;
+                }
 
-            & + .card-article {
-            margin-top: 4rem;
+                & + .card-article {
+                margin-top: 4rem;
+                }
             }
-        }
         }
 
         .content-ads {
