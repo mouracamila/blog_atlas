@@ -1,0 +1,27 @@
+<div class="card-article">
+
+    {% if post.featured_images.count %}
+        {% set post_image = post.featured_images[0] %}
+        <img
+            class="card-article-img"
+            src="{{ post_image.thumb(350, 268, {mode: 'crop'}) }}"
+            alt="{{ post_image.description }}">
+    {% endif %}
+
+    <div class="content-text">
+        <h3 class="card-article-title format-text max-one-line">
+            <a href="{{ post.url }}">
+                {{ post.title }}
+            </a>
+        </h3>
+        <div class="card-article-resume format-text max-three-line">
+            {{ post.summary | raw }}
+        </div>
+        <div class="content-tags">
+            {% if post.categories.count %}
+                {% set categoryLinks = post.categories | map(c => "<a href=\"#{c.url}\">#{c.name}</a>") | join(', ') %}
+                {{ categoryLinks | raw }}
+            {% endif %}
+        </div>
+    </div>
+</div>
