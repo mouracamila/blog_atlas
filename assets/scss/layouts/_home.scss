@@ -5,7 +5,6 @@ div#main {
     max-width: 90rem;
     align-items: center;
 
-
     div {
       h1 {
         align-self: center;
@@ -19,7 +18,7 @@ div#main {
   section#featured {
     height: 52rem;
     background-color: $color-primary;
-    background: url("http://placekitten.com/1500/520");
+    background-size: cover;
     display: flex;
     align-items: flex-end;
 
@@ -54,126 +53,123 @@ div#main {
     flex-direction: row;
     justify-content: space-between;
 
-        .content-articles {
-            .card-article {
-                display: flex;
-                max-width: 95rem;
+    .content-articles {
 
-                .card-article-img {
-                height: auto;
-                }
-
-                .content-text {
-                align-self: flex-end;
-                padding: 1rem 3rem;
-                }
-
-                .card-article-resume {
-                margin: 2rem 0;
-                line-height: 1.5em;
-                }
-
-                & + .card-article {
-                margin-top: 4rem;
-                }
-            }
-        }
-
-        .content-ads {
-            display: block;
-
-            .ads-big{
-                width: 30rem;
-                height: 60rem;
-            }
-
-            .ads-med{
-                width: 30rem;
-                height: 28rem;
-            }
-        }
-
-    }
-
-    .pagination{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        margin-bottom: 13rem;
-
-        li {
-            list-style: none;
+        .card-article {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 5rem;
-            height: 5rem;
-            background-color: $color-primary;
+            max-width: 95rem;
+            min-width: 85rem;
 
-
-            & + .pag-num{
-                border: solid 1px $color-primary;
-                border-radius: 4px;
-
-            }
-
-            &:hover{
-                background-color: rgb(228, 206, 9);
-                border: solid 1px $color-secundary;
-                border-radius: 50%;
-                font-weight: bold;
-            }
-
-
-            a {
+            a{
                 color: black;
                 text-decoration: none;
             }
 
-            & + li {
-               margin-left: 3rem;
+            .card-article-img {
+            height: auto;
             }
 
-            &:hover {
-                cursor: pointer;
-                color: #ffff;
-
-                a {
-                    color: #ffff;
-
-                }
+            .content-text {
+            align-self: flex-end;
+            padding: 1rem 3rem;
             }
 
-        }
+            .card-article-resume {
+            margin: 2rem 0;
+            }
 
-    }
-
-
-    .format-text {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-
-        &.one-line {
-            -webkit-line-clamp: 1;
-        }
-
-        &.max-two-line {
-            -webkit-line-clamp: 2;
-        }
-
-        &.max-three-line {
-            -webkit-line-clamp: 3;
+            & + .card-article {
+            margin-top: 4rem;
+            }
         }
     }
 
-    .card-article {
-        background-color: #ffffff;
+    .content-ads {
+        display: block;
+
+        .ads-big {
+            width: 30rem;
+            height: 60rem;
+        }
+
+        .ads-med {
+            width: 30rem;
+            height: 28rem;
+        }
+    }
+  }
+
+  .pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 13rem;
+
+    li {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 5rem;
+      height: 5rem;
+      background-color: $color-primary;
+
+      & + .pag-num {
+        border: solid 1px $color-primary;
         border-radius: 4px;
-        border: 0.5px solid #f2f2f2;
+      }
+
+      &:hover {
+        background-color: rgb(228, 206, 9);
+        border-radius: 50%;
+        font-weight: bold;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+
+      & + li {
+        margin-left: 3rem;
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: #ffff;
+
+        a {
+          color: #ffff;
+        }
+      }
+    }
+  }
+
+  .format-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+
+    &.one-line {
+      -webkit-line-clamp: 1;
+    }
+
+    &.max-two-line {
+      -webkit-line-clamp: 2;
+    }
+
+    &.max-three-line {
+      -webkit-line-clamp: 3;
+    }
+  }
+
+  .card-article {
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: 0.5px solid #f2f2f2;
 
     &:hover {
       -webkit-box-shadow: 8px 7px 26px -9px rgba(0, 0, 0, 0.74);
@@ -183,21 +179,21 @@ div#main {
     }
   }
 
-    .card-ads{
-        color: #8d8d8d;
-        background: #f2f2f2;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+  .card-ads {
+    color: #8d8d8d;
+    background: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        &+.card-ads{
-            margin-top: 5px;
-        }
+    & + .card-ads {
+      margin-top: 5px;
     }
+  }
 
-    .content-tags {
-        display: flex;
-        align-items: center;
+  .content-tags {
+    display: flex;
+    align-items: center;
 
     img {
       margin-right: 1.5rem;
