@@ -5,14 +5,16 @@ is_hidden = 0
 
 [blogPosts]
 pageNumber = "{{ :page }}"
-postsPerPage = 10
+postsPerPage = 4
 noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
-categoryPage = "blog/category"
-postPage = "blog/post"
+categoryPage = "blog-post"
+postPage = "blog-post"
 ==
+{% set posts = blogPosts.posts %}
 <div id="main">
 
+    {% if posts.currentPage == 1 %}
     <section id="welcome">
         <div>
             <h1 class="welcome-title ">
@@ -21,93 +23,49 @@ postPage = "blog/post"
             <p class="welcome-subtitle">Will Durant</p>
 
             <!-- A ciência conhece um único comando: contribuir com a ciência. Bertolt Brecht -->
-        <div>
+        </div>
     </section>
+
+    {% set featured_post = posts|first %}
+    {% set featured_image = featured_post.featured_images[0].thumb(1280, 400, {mode: 'crop'}) %}
+
+    {% put styles  %}
+        <style>
+            #featured { background-image: url('{{ featured_image }}'); }
+        </style>
+    {% endput %}
 
     <section id="featured" class="card-article">
 
         <div class="featured-box" >
             <div class="featured-text">
-                <h1 class="featured-title format-text one-line">Lorem, ipsum dolor.</h1>
-                <p class="featured-subtitle format-text max-two-line">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Veniam cupiditate facere quis assumenda dicta voluptatum
-                    iusto, alias sint similique. Corporis sint iure est consectetur
-                    odit ex officiis cum expedita ipsam blanditiis.
-                    Incidunt doloremque dolorem.
-                </p>
+                <h1 class="featured-title format-text one-line">
+                    {{ featured_post.title }}
+                </h1>
+                <div class="featured-subtitle format-text max-two-line">
+                    {{ featured_post.summary | raw }}
+                </div>
                 <div class="content-tags">
-                    <img src="{{ 'assets/icons/tag.svg'|theme }}" alt="">
-                    <a href="">Tag</a>
-                    <a href="">Tag</a>
-                    <a href="">Tag</a>
+                    {% if featured_post.categories.count %}
+                        {% set categoryLinks = featured_post.categories | map(c => "<a href=\"#{c.url}\">#{c.name}</a>") | join(', ') %}
+                        {{ categoryLinks | raw }}
+                    {% endif %}
                 </div>
             </div>
         </div>
 
     </section>
+    {% endif %}
 
     <section id="container">
         <div class="content-articles">
-
-            {% partial 'blog/post-list' %}
-
-            <div class="card-article">
-                <img class="card-article-img"src="http://placekitten.com/350/268" alt="">
-                <div class="content-text">
-                    <h3 class="card-article-title format-text max-one-line ">Lorem, ipsum dolor.</h3>
-                    <p class="card-article-resume format-text max-three-line">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, ab.
-                        lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Veniam cupiditate facere quis assumenda dicta voluptatum
-                        iusto, alias sint similique. Corporis sint iure est consectetur
-                        odit ex officiis cum expedita ipsam blanditiis.
-                        Incidunt doloremque dolorem
-                    </p>
-                    <div class="content-tags">
-                        <img src="{{ 'assets/icons/tag.svg'|theme }}" alt="">
-                        <a href="">Tag</a>
-                        <a href="">Tag</a>
-                        <a href="">Tag</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-article">
-                <img class="card-article-img"src="http://placekitten.com/350/268" alt="">
-                <div class="content-text">
-                    <h3 class="card-article-title format-text max-one-line ">Lorem, ipsum dolor.</h3>
-                    <p class="card-article-resume format-text max-three-line">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, ab.
-                        lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Veniam cupiditate facere quis assumenda dicta voluptatum
-                        iusto, alias sint similique. Corporis sint iure est consectetur
-                        odit ex officiis cum expedita ipsam blanditiis.
-                        Incidunt doloremque dolorem
-                    </p>
-                    <div class="content-tags">
-                        <img src="{{ 'assets/icons/tag.svg'|theme }}" alt="">
-                        <a href="">Tag</a>
-                        <a href="">Tag</a>
-                        <a href="">Tag</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-article">
-                <img class="card-article-img"src="http://placekitten.com/350/268" alt="">
-                <div class="content-text">
-                    <h3 class="card-article-title format-text max-one-line ">Lorem, ipsum dolor.</h3>
-                    <p class="card-article-resume format-text max-three-line">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, ab.
-                        lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Veniam cupiditate facere quis assumenda dicta voluptatum
-                        iusto, alias sint similique. Corporis sint iure est consectetur
-                        odit ex officiis cum expedita ipsam blanditiis.
-                        Incidunt doloremque dolorem
-                    </p>
-                    <div class="content-tags">
-                        <img src="{{ 'assets/icons/tag.svg'|theme }}" alt="">
-                        <a href="">Tag</a>
-                        <a href="">Tag</a>
-                        <a href="">Tag</a>
-                    </div>
-                </div>
-            </div>
+            {% for post in posts %}
+                {% if posts.currentPage == 1 and loop.index > 1 %}
+                    {% partial "blog/post-card" post=post %}
+                {% endif %}
+            {% else %}
+                <div class="no-data">{{ blogPosts.noPostsMessage }}</div>
+            {% endfor %}
         </div>
         <div class="content-ads">
             <div class="card-ads ads-big">
@@ -119,28 +77,35 @@ postPage = "blog/post"
         </div>
 
     </section>
-    <ul class="pagination">
-        <li class="pag-button pag-icon">
-            <a href="#">
-                <img class="icon"src="{{ 'assets/icons/chevrons-left.svg'|theme }}" alt="">
-            </a>
-        </li>
-        <li class="pag-button pag-num">
-            <a href="#">1</a>
-        </li>
-        <li class="pag-button pag-num active">
-            <a href="#">2</a>
-        </li>
-        <li class="pag-button pag-num">
-            <a href="#">3</a>
-        </li>
-        <li class="pag-button pag-num">
-            <a href="#">...</a>
-        </li>
-        <li class="pag-button pag-right">
-            <a href="#">
-                <img class="icon" src="{{ 'assets/icons/chevrons-right.svg'|theme }}" alt="">
-            </a>
-        </li>
-    </ul>
+
+    {% if posts.lastPage > 1 %}
+        <nav aria-label="pagination articles">
+            <ul class="pagination page-item">
+                {% if posts.currentPage > 1 %}
+                    <li class="pag-button pag-icon page-item">
+                        <a class="icon page-link" href="{{ this.page.baseFileName | page({ (blogPosts.pageParam): (posts.currentPage-1) }) }}" aria-label="Previous"></a>>
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% for page in 1..posts.lastPage %}
+                    <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                        <a href="{{ this.page.baseFileName | page({ (blogPosts.pageParam): page }) }}">{{ page }}</a>
+                    </li>
+                {% endfor %}
+
+
+                {% if posts.lastPage > posts.currentPage %}
+                    <li class="pag-button pag-right">
+                        <a  href="{{ this.page.baseFileName | page({ (blogPosts.pageParam): (posts.currentPage+1) }) }}" aria-label="Next">
+                            <span class="icon"aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
+
+
 </div>
