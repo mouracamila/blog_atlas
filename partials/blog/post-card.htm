@@ -9,12 +9,12 @@
     {% endif %}
 
     <div class="content-text">
-        <h3 class="card-article-title format-text max-one-line">
-            <a href="{{ post.url }}">
+        <h3 class="card-article-title format-text one-line">
+
                 {{ post.title }}
-            </a>
+
         </h3>
-        <div class="card-article-resume format-text max-three-line">
+        <div class="card-article-resume format-text max-two-line ">
             {{ post.summary | raw }}
         </div>
         <div class="content-tags">
@@ -22,6 +22,9 @@
                 {% set categoryLinks = post.categories | map(c => "<a href=\"#{c.url}\">#{c.name}</a>") | join(', ') %}
                 {{ categoryLinks | raw }}
             {% endif %}
+        </div>
+        <div class="content-footer">
+            <a class="button-readmore" href="{{ post.url }}">Conhecer</a>
         </div>
     </div>
 </div>
