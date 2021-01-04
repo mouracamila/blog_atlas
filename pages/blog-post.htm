@@ -11,6 +11,8 @@ categoryPage = "blog/category"
 
 <div class="content">{{ post.content_html | raw }}</div>
 
+
+
 {% if post.featured_images.count %}
     <div class="featured-images text-center">
         {% for image in post.featured_images %}
