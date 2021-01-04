@@ -1,73 +1,107 @@
-footer#layout-footer{
+footer#layout-footer {
+
+    .content-newslatter{
+        background-color: $color-secundary;
+        height: 24rem;
+        width: 100%;
+        border-radius: 9px;
+        position: relative;
+        margin-bottom: -7%;
+
+        input {
+            border: none;
+            height: 3rem;
+            width: 26rem;
+            background-color: $color-white;
+            border-bottom-left-radius: 20px;
+            border-top-left-radius: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            &:focus {
+                outline: none;
+            }
+
+            button {
+                border: none;
+                background: $color-green;
+                padding: 2px;
+                height: 3rem;
+                width: 5rem;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &.input-button{
+                    margin-left: -15px;
+                }
+            }
+        }
+
+    }
+
+    .content-footer {
         background-color: $color-primary;
-        height: 30rem;
-        display: flex;
-        align-items: flex-end;
-
-
-    .content-footer{
+        height: 40rem;
         display: flex;
         flex-direction: column;
         height: 100%;
         justify-content: flex-end;
-
-
     }
 
-    .footer-logo{
+    .footer-logo {
         margin-bottom: 2rem;
         display: flex;
-
-
     }
 
-    .social-content{
-        display:flex;
+    .social-content {
+        display: flex;
         margin-bottom: 3rem;
         padding-left: 0;
 
-        li{
+        li {
             list-style: none;
             display: flex;
             align-items: center;
 
-            &+li{
+            & + li {
                 margin-left: 1rem;
             }
 
-            a{
+            a {
                 display: flex;
             }
         }
-
     }
 
-    .line{
+    .line {
         border: 1px solid $color-secundary;
-
     }
 
-    .box-footer{
+    .box-footer {
         display: flex;
         justify-content: space-between;
         margin: 6rem 0 2rem;
 
-        .copyright{
+        .copyright {
             font-size: 16px;
             color: #8d8d8d;
         }
 
-        .links{
-            a{
+        .links {
+            a {
                 text-decoration: none;
                 color: black;
 
-                &+ a{
+                & + a {
                     margin-left: 2rem;
                 }
             }
         }
     }
-
-
 }
