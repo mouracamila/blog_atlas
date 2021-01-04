@@ -8,20 +8,21 @@
             alt="{{ post_image.description }}">
     {% endif %}
 
-    <div class="content-text">
-        <h3 class="card-article-title format-text one-line">
-
+    <div class="card-content">
+        <div class="content-text">
+            <h3 class="card-article-title format-text one-line">
                 {{ post.title }}
+            </h3>
+            <div class="card-article-resume format-text max-two-line ">
+                {{ post.summary | raw }}
+            </div>
+            <div class="content-tags">
+                {% if post.categories.count %}
+                    {% set categoryLinks = post.categories | map(c => "<a href=\"#{c.url}\">#{c.name}</a>") | join(', ') %}
+                    {{ categoryLinks | raw }}
+                {% endif %}
+            </div>
 
-        </h3>
-        <div class="card-article-resume format-text max-two-line ">
-            {{ post.summary | raw }}
-        </div>
-        <div class="content-tags">
-            {% if post.categories.count %}
-                {% set categoryLinks = post.categories | map(c => "<a href=\"#{c.url}\">#{c.name}</a>") | join(', ') %}
-                {{ categoryLinks | raw }}
-            {% endif %}
         </div>
         <div class="content-footer">
             <a class="button-readmore" href="{{ post.url }}">Conhecer</a>
