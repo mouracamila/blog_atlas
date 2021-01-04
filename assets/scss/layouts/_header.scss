@@ -1,39 +1,82 @@
 header#layout-header {
-  background-color: $color-primary;
-  height: 9rem;
+    background-color: $color-primary;
+    height: 9rem;
 
-  .navbar {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    .navbar {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-    div {
-      input {
-        border: none;
-        height: 3rem;
-        border-bottom: solid 1px #7a7373;
-        background-color: transparent;
+        .nav-content {
+            display: flex;
+            align-content: center;
 
-        &:focus {
-          outline: none;
+            input {
+                border: none;
+                height: 3rem;
+                width: 26rem;
+                background-color: $color-white;
+                border-bottom-left-radius: 20px;
+                border-top-left-radius: 20px;
+                padding-left: 20px;
+                padding-right: 20px;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            button {
+                border: none;
+                background: $color-green;
+                padding: 2px;
+                height: 3rem;
+                width: 5rem;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &.burguer-button {
+                    margin-left: 3rem;
+                }
+
+                &.input-button{
+                    margin-left: -15px;
+                }
+            }
         }
-      }
-
-      button {
-        border: none;
-        background: transparent;
-        padding: 2px;
-        vertical-align: text-top;
-
-        &:focus {
-          outline: none;
-        }
-
-        &.burguer-button {
-          margin-left: 3rem;
-        }
-      }
     }
-  }
+
+    .nav-links{
+        background-color: $color-secundary;
+
+        ul{
+            display: flex;
+            justify-content: flex-end;
+            height: 4rem;
+
+            li{
+                list-style: none;
+                display: flex;
+                align-items: center;
+
+
+                &+li{
+                    margin-left: 3rem;
+                }
+
+                a{
+                    display: flex;
+                    text-decoration: none;
+                    color: $color-white;
+                }
+            }
+        }
+    }
 }
