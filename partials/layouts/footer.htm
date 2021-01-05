@@ -2,25 +2,49 @@
 <footer id="layout-footer">
     <div class="container content-newslatter">
         <div class="newslatter">
-
-            <p>BOLETIM DE NOTICIAS</p>
-            <p>Deixe seu email para não perder mais nada!</p>
-
-            <div>
-
-            <input type="text" placeholder="...">
-            <button type="submit" class="input-button">
-                enviar
-            </button>
+            <h3 class="footer-title">BOLETIM DE NOTICIAS</h3>
+            <p class="footer-subtitle">
+                Deixe seu email para não perder mais nada!
+            </p>
+            <div class="email-local">
+                <input type="text" placeholder="exemple@email.com" />
+                <button
+                    type="submit"
+                    class="input-button footer-button send-button"
+                >
+                    Enviar
+                </button>
+            </div>
         </div>
         <div class="social">
-            <h3>Siga-nos</h3>
-            <p>Vamos interagir em outras redes!</p>
-            <button></button>
-        </div>
+            <h3 class="footer-title">SIGA-NOS</h3>
+            <p class="footer-subtitle">Vamos interagir em outras redes!</p>
+            <div class="content-social">
+                <button class="footer-button">
+                    <img
+                        class="icon"
+                        src="{{ 'assets/icons/facebook.svg'|theme }}"
+                        alt=""
+                    />
+                </button>
+                <button class="footer-button">
+                    <img
+                        class="icon"
+                        src="{{ 'assets/icons/instagram.svg'|theme }}"
+                        alt=""
+                    />
+                </button>
+                <button class="footer-button">
+                    <img
+                        class="icon"
+                        src="{{ 'assets/icons/youtube.svg'|theme }}"
+                        alt=""
+                    />
+                </button>
 
+            </div>
         </div>
-        </div>
+    </div>
     <div class="content-footer">
         <div class="container whapper-footer">
             <div class="footer-logo">
