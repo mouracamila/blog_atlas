@@ -77,7 +77,13 @@ postPage = "blog-post"
                 {% if posts.currentPage > 1 %}
                     <li class="pag-button pag-icon page-item">
                         <a class="icon page-link" href="{{ this.page.baseFileName | page({ (blogPosts.pageParam): (posts.currentPage-1) }) }}" aria-label="Previous"></a>>
-                            <span aria-hidden="true">&laquo;</span>
+                            <span aria-hidden="true">
+                                <img
+                                    class="icon"
+                                    src="{{ 'assets/icons/chevron-left.svg'|theme }}"
+                                    alt=""
+                                />
+                            </span>
                         </a>
                     </li>
                 {% endif %}
@@ -92,7 +98,13 @@ postPage = "blog-post"
                 {% if posts.lastPage > posts.currentPage %}
                     <li class="pag-button pag-right">
                         <a  href="{{ this.page.baseFileName | page({ (blogPosts.pageParam): (posts.currentPage+1) }) }}" aria-label="Next">
-                            <span class="icon"aria-hidden="true">&raquo;</span>
+                            <span class="icon"aria-hidden="true">
+                                <img
+                                    class="icon"
+                                    src="{{ 'assets/icons/chevron-right.svg'|theme }}"
+                                    alt=""
+                                />
+                            </span>
                         </a>
                     </li>
                 {% endif %}

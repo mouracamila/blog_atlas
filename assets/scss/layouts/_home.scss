@@ -151,7 +151,7 @@ div#main {
             align-items: center;
             width: 5rem;
             height: 5rem;
-            background-color: $color-primary;
+            background-color: white;
             border-radius: 9px;
 
             & .pag-num {
@@ -164,7 +164,7 @@ div#main {
             }
 
             a {
-                color: $color-white;
+                color: $color-primary;
                 text-decoration: none;
             }
 
