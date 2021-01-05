@@ -87,6 +87,26 @@ footer#layout-footer {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+
+    }
+
+    .whapper{
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        padding-bottom: 6rem;
+
+
+        h4{
+            font-size: 1em;
+            text-transform: uppercase;
+            color: $color-yellow;
+            margin-bottom: 3rem;
+        }
+
+        .whapper-subtitle{
+            color: $color-white;
+        }
     }
 
     .footer-logo {
@@ -96,8 +116,8 @@ footer#layout-footer {
 
     .social-content {
         display: flex;
-        margin-bottom: 3rem;
         padding-left: 0;
+        justify-content: center;
 
         li {
             list-style: none;
@@ -110,33 +130,39 @@ footer#layout-footer {
 
             a {
                 display: flex;
-            }
-        }
-    }
+                background: $color-white;
+                opacity: 0.5;
+                padding: 4px;
+                border-radius: 50%;
 
-    .line {
-        border: 1px solid $color-secundary;
-    }
-
-    .box-footer {
-        display: flex;
-        justify-content: space-between;
-        margin: 6rem 0 2rem;
-
-        .copyright {
-            font-size: 16px;
-            color: #8d8d8d;
-        }
-
-        .links {
-            a {
-                text-decoration: none;
-                color: black;
-
-                & + a {
-                    margin-left: 2rem;
+                & :hover{
+                    opacity: 1;
+                    color: $color-white;
                 }
             }
         }
     }
+
+    .others {
+
+        .links{
+            flex-direction: column;
+            display:flex;
+
+            a {
+                text-decoration: none;
+                color: $color-white;
+
+            }
+        }
+    }
+
+    .copyright {
+        font-size: 1.2rem;
+        text-transform: mute;
+        color: #8d8d8d;
+        align-self:center;
+        text-transform: uppercase;
+    }
+
 }
