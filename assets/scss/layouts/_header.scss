@@ -12,44 +12,6 @@ header#layout-header {
             display: flex;
             align-content: center;
 
-            input {
-                border: none;
-                height: 3rem;
-                width: 26rem;
-                background-color: $color-white;
-                border-bottom-left-radius: 20px;
-                border-top-left-radius: 20px;
-                padding-left: 20px;
-                padding-right: 20px;
-
-                &:focus {
-                    outline: none;
-                }
-            }
-
-            button {
-                border: none;
-                background: $color-green;
-                padding: 2px;
-                height: 3rem;
-                width: 5rem;
-                border-radius: 20px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                &:focus {
-                    outline: none;
-                }
-
-                &.burguer-button {
-                    margin-left: 3rem;
-                }
-
-                &.input-button{
-                    margin-left: -15px;
-                }
-            }
         }
     }
 

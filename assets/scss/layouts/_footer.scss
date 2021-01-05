@@ -5,36 +5,8 @@ footer#layout-footer {
     }
 
     .footer-subtitle {
-        color: $color-yellow;
-    }
-
-    .footer-button {
-        border: none;
-        background: $color-green;
-        padding: 2px;
-        height: 3rem;
-        width: 5rem;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        &:focus {
-            outline: none;
-        }
-
-        &:hover {
-            background-color: $color-yellow;
-        }
-
-        &.input-button {
-            margin-left: -15px;
-        }
-
-        &.send-button {
-            width: 7.5rem;
-            font-size: 0.8em;
-        }
+        color: $color-yellow-light;
+        margin: 2rem 0 ;
     }
 
     .content-newslatter {
@@ -43,41 +15,15 @@ footer#layout-footer {
         width: 100%;
         border-radius: 9px;
         position: relative;
-        margin-bottom: -7%;
+        margin-bottom: -9rem;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
 
-        input {
-            border: none;
-            height: 3rem;
-            width: 26rem;
-            background-color: $color-white;
-            border-bottom-left-radius: 20px;
-            border-top-left-radius: 20px;
-            padding-left: 20px;
-            padding-right: 20px;
-
-            &:focus {
-                outline: none;
-            }
-        }
 
         .email-local {
             display: flex;
-            margin-top: 3rem;
-        }
-    }
-
-    .content-social {
-        display: flex;
-        margin-top: 3rem;
-
-        .footer-button {
-            & + .footer-button {
-                margin-left: 2rem;
-            }
         }
     }
 
@@ -101,7 +47,6 @@ footer#layout-footer {
             font-size: 1em;
             text-transform: uppercase;
             color: $color-yellow;
-            margin-bottom: 3rem;
         }
 
         .whapper-subtitle{
@@ -117,7 +62,7 @@ footer#layout-footer {
     .social-content {
         display: flex;
         padding-left: 0;
-        justify-content: center;
+
 
         li {
             list-style: none;
@@ -125,22 +70,35 @@ footer#layout-footer {
             align-items: center;
 
             & + li {
-                margin-left: 1rem;
+                margin-left: 2rem;
             }
 
             a {
                 display: flex;
-                background: $color-white;
                 opacity: 0.5;
-                padding: 4px;
+                padding: 6px;
                 border-radius: 50%;
 
-                & :hover{
+                &:hover{
                     opacity: 1;
-                    color: $color-white;
                 }
             }
         }
+
+        &.icons-newslatter{
+            a{
+                background: $color-yellow;
+            }
+        }
+
+        &.icons-contact{
+            justify-content: center;
+
+            a{
+                background: $color-white;
+            }
+        }
+
     }
 
     .others {
