@@ -86,10 +86,17 @@ div#main {
                         text-decoration: none;
                         font-size: 1em;
                         background: $color-green;
-                        color: $color-white;
-                        padding: 0.2rem 1rem;
-                        border-style: 20px;
-                        border-radius: 20px;
+                        color: $color-primary;
+                        padding: 0 2rem;
+                        border-radius: 9px;
+                        height: 30px;
+                        display: flex;
+                        align-items: center;
+
+                        img{
+                            margin-left:6px;
+                        }
+
 
                         &:hover {
                             color: $color-secundary;
