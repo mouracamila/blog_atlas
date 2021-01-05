@@ -47,10 +47,16 @@ footer#layout-footer {
             font-size: 1em;
             text-transform: uppercase;
             color: $color-yellow;
+            margin-bottom: 2rem;
         }
 
         .whapper-subtitle{
             color: $color-white;
+
+            &+.whapper-subtitle{
+                margin-top: 0.5rem;
+            }
+
         }
     }
 
@@ -93,6 +99,7 @@ footer#layout-footer {
 
         &.icons-contact{
             justify-content: center;
+            margin-top: 3rem;
 
             a{
                 background: $color-white;
