@@ -3,20 +3,33 @@ header#layout-header {
     height: 9rem;
 
     .navbar {
-        height: 100%;
+
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding-top: 0;
+        flex-direction: column;
+
+
 
         .nav-content {
             display: flex;
             align-content: center;
+            width: 100%;
+            height: 90px;
+            justify-content: space-between;
 
+        }
+
+        .nav-seach{
+            display: flex;
+            align-items: center;
         }
     }
 
     .nav-links{
         background-color: $color-secundary;
+        width: 100%;
 
         ul{
             display: flex;
@@ -37,6 +50,10 @@ header#layout-header {
                     display: flex;
                     text-decoration: none;
                     color: $color-white;
+
+                    &:hover{
+                        color: $color-yellow;
+                    }
                 }
             }
         }
