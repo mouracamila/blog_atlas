@@ -9,35 +9,90 @@ categoryPage = "blog/category"
 ==
 {% set post = blogPost.post %}
 
-<div class="content">{{ post.content_html | raw }}</div>
+<div id="article-page">
+
+    <div class="article-body">
+        {% if post.featured_images.count %}
+            <div class="featured-images">
+                {% for image in post.featured_images %}
+
+                    <img
+                        data-src="{{ image.filename }}"
+                        src="{{ image.path }}"
+                        class="feature-img"
+                        alt="{{ image.title }}"
+                    />
+
+                    <p class="credits">{{image.description}}</p>
+
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <div id="article-page" class="content">
+
+            <div class="content-tags">
+                {% if post.categories.count %}
+                    {% set categoryLinks = post.categories | map(c => "<a href=\"#{c.url}\">#{c.name}</a>") | join(', ') %}
+                    {{ categoryLinks | raw }}
+                {% endif %}
+            </div>
+
+            <h1>{{post.title}}</h1>
+
+            <h4> {{ post.summary | raw }}</h4>
+
+            {{ post.content_html | raw }}
+
+        </div>
 
 
 
-{% if post.featured_images.count %}
-    <div class="featured-images text-center">
-        {% for image in post.featured_images %}
-            <p>
-                <img
-                    data-src="{{ image.filename }}"
-                    src="{{ image.path }}"
-                    alt="{{ image.description }}"
-                    style="max-width: 100%" />
-            </p>
-        {% endfor %}
+
+
+        <p class="info">
+            {% if post.categories.count %}
+                {% set categoryLinks = post.categories | map(c => "<a href=\"#{c.url}\">#{c.name}</a>") | join(', ') %}
+
+                {{ 'rainlab.blog::lang.post.posted_byline' | trans({
+                    date: post.published_at | date('rainlab.blog::lang.post.date_format' | trans),
+                    categories: categoryLinks
+                }) }}
+            {% else %}
+                {{ 'rainlab.blog::lang.post.posted_byline_no_categories' | trans({
+                    date: post.published_at | date('rainlab.blog::lang.post.date_format'|trans)
+                }) }}
+            {% endif %}
+        </p>
+
     </div>
-{% endif %}
 
-<p class="info">
-    {% if post.categories.count %}
-        {% set categoryLinks = post.categories | map(c => "<a href=\"#{c.url}\">#{c.name}</a>") | join(', ') %}
+    <div class="other-col">
+        This is the small collun
 
-        {{ 'rainlab.blog::lang.post.posted_byline' | trans({
-            date: post.published_at | date('rainlab.blog::lang.post.date_format' | trans),
-            categories: categoryLinks
-        }) }}
-    {% else %}
-        {{ 'rainlab.blog::lang.post.posted_byline_no_categories' | trans({
-            date: post.published_at | date('rainlab.blog::lang.post.date_format'|trans)
-        }) }}
-    {% endif %}
-</p>
+        <div class="ads-big">
+            ads
+        </div>
+
+        <div class="other-articles">
+            <h4>Publicações recentes</h4>
+
+            <div class="feature-articles">
+                <img class="img-big" src="http://placekitten.com/g/250/188" alt="" >
+                <p class="category">Cartegory</p>
+                <h3>Lorem, ipsum dolor.</h3>
+            </div>
+
+            <div class="small-articles">
+                <img class="img-small" src="http://placekitten.com/g/250/188" alt="" >
+                <div class="info">
+                    <p>Category</p>
+                    <h4>Lorem, ipsum.</h4>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>

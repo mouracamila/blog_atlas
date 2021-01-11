@@ -1,0 +1,60 @@
+
+div#article-page{
+    margin-top: 6rem;
+
+    .article-body{
+        width: calc(100% - 320px);
+        padding-right:5rem;
+        float: left;
+
+        .featured-images{
+
+            .feature-img{
+                max-width: 760px;
+
+            }
+        }
+
+    }
+    .other-col{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        float: right;
+        background: white;
+        height: 100vh;
+        align-items: center;
+
+        .ads-big {
+            width: 265px;
+            height: 600px;
+            background: $color-secundary;
+        }
+
+        .other-articles{
+            .img-big{
+                height: 180px;
+                width: 260px;
+            }
+
+            .small-articles{
+                display: flex;
+
+
+                .img-small{
+                    height: 90px;
+                    width: 130px;
+                }
+
+                .info{
+                    padding-left: 1rem;
+                    align-self:center;
+                }
+            }
+
+
+        }
+
+    }
+
+}
