@@ -29,12 +29,6 @@ div#article-page{
             text-decoration: none;
         }
 
-        .ads-big {
-            width: 300px;
-            height: 600px;
-            border: solid 1px $color-secundary;
-        }
-
         .other-articles{
 
             margin-top: 2rem;
@@ -48,8 +42,6 @@ div#article-page{
                 text-align: center;
                 text-transform: uppercase;
             }
-
-
 
             .title{
                 color: $color-primary;
