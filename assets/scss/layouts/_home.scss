@@ -49,6 +49,7 @@ div#main {
                 display: flex;
                 max-width: 84rem;
 
+
                 .card-article-img {
                     height: 100%;
                     width: 37rem;
@@ -202,8 +203,9 @@ div#main {
     }
 
     .card-article {
-        background-color: white;
+
         border-radius: 9px;
+        border: solid 1px $color-white;
     }
 
 
