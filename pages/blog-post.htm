@@ -12,24 +12,9 @@ categoryPage = "blog/category"
 <div id="article-page">
 
     <div class="article-body">
-        {% if post.featured_images.count %}
-            <div class="featured-images">
-                {% for image in post.featured_images %}
 
-                    <img
-                        data-src="{{ image.filename }}"
-                        src="{{ image.path }}"
-                        class="feature-img"
-                        alt="{{ image.title }}"
-                    />
 
-                    <p class="credits">{{image.description}}</p>
-
-                {% endfor %}
-            </div>
-        {% endif %}
-
-        <div id="article-page" class="content">
+        <div id="article-page" class="ar">
 
             <div class="content-tags">
                 {% if post.categories.count %}
@@ -38,16 +23,36 @@ categoryPage = "blog/category"
                 {% endif %}
             </div>
 
-            <h1>{{post.title}}</h1>
+            <h1 class="post-title">{{post.title}}</h1>
 
-            <h4> {{ post.summary | raw }}</h4>
+            <h4 class="post-subtitle"> {{ post.summary | raw }}</h4>
+
+            {% if post.featured_images.count %}
+                <div class="featured-images">
+                    {% for image in post.featured_images %}
+
+                        <img
+                            data-src="{{ image.filename }}"
+                            src="{{ image.path }}"
+                            class="feature-img"
+                            alt="{{ image.title }}"
+                        />
+
+                        {% if image.description %}
+                            <p class="img-credits">{{ image.description }}</p>
+                        {% endif %}
+
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+
+
+
 
             {{ post.content_html | raw }}
 
         </div>
-
-
-
 
 
         <p class="info">
@@ -67,7 +72,7 @@ categoryPage = "blog/category"
 
     </div>
 
-    <div class="other-col">
+    <div class="small-col">
         <div class="card-ads ads-big">
             adsense
         </div>

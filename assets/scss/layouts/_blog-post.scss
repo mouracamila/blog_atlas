@@ -7,21 +7,37 @@ div#article-page{
         padding-right:5rem;
         float: left;
 
+        .post-subtitle{
+            margin: 1rem 0 3rem;
+            line-height: 1.5;
+        }
+
         .featured-images{
+            margin-bottom: 3rem;
 
             .feature-img{
                 max-width: 760px;
+            }
 
+            .img-credits{
+                font-size: 14px;
+                color: $color-secundary;
+                margin: 1rem 0;
+                border-left: solid 1px $color-secundary;
+                padding-left: 2rem;
             }
         }
 
+
+
+
     }
-    .other-col{
+
+    .small-col{
         display: flex;
         flex-direction: column;
         width: 300px;
         float: right;
-        // background: white;
         height: 100vh;
         align-items: center;
 
@@ -32,7 +48,7 @@ div#article-page{
         .other-articles{
 
             margin-top: 2rem;
-            border: solid 1px $color-yellow;
+            border: solid 1px $color-white;
             padding: 2rem;
             background: white;
             border-radius: 9px;
@@ -41,6 +57,7 @@ div#article-page{
                 margin-bottom: 2rem;
                 text-align: center;
                 text-transform: uppercase;
+                font-weight: 400;
             }
 
             .title{
