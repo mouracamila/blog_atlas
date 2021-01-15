@@ -32,17 +32,29 @@
 }
 
 .content-tags{
-    a{
+    display: flex;
+    align-items: center;
+
+    img {
+        margin-right: 1.5rem;
+    }
+
+    a {
         text-decoration: none;
+        font-size: 14px;
         font-weight: 500;
         margin-bottom: 0;
         letter-spacing: 3px;
-        margin-top: 1rem;
         text-transform: uppercase;
         color: $color-secundary;
+
+        & + a {
+            margin-left: 1.5rem;
+        }
 
         &:hover{
             color: $color-yellow;
         }
+
     }
 }
