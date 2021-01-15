@@ -2,29 +2,33 @@
 
     {% if post.featured_images.count %}
         {% set post_image = post.featured_images[0] %}
-        <img
-            class="card-article-img"
-            src="{{ post_image.thumb(350, 268, {mode: 'crop'}) }}"
-            alt="{{ post_image.description }}">
+        <a  href="{{ post.url }}">
+            <img
+                class="card-article-img"
+                src="{{ post_image.thumb(350, 268, {mode: 'crop'}) }}"
+                alt="{{ post_image.description }}">
+        </a>
     {% endif %}
 
     <div class="card-content">
         <div class="content-text">
-            <h3 class="card-article-title format-text one-line">
-                {{ post.title }}
-            </h3>
-            <div class="card-article-resume format-text max-two-line ">
-                {{ post.summary | raw }}
-            </div>
             <div class="content-tags">
                 {% if post.categories.count %}
                     {% set categoryLinks = post.categories | map(c => "<a href=\"#{c.url}\">#{c.name}</a>") | join(', ') %}
                     {{ categoryLinks | raw }}
                 {% endif %}
             </div>
+            <a class="card-article-title format-text one-line" href="{{ post.url }}">
+                <h2>
+                    {{ post.title }}
+                </h2>
+            </a>
+            <a class="card-article-resume format-text max-two-line " href="{{ post.url }}">
+                {{ post.summary | raw }}
+            </a>
 
         </div>
-        <div class="content-footer">
+        <!-- <div class="content-footer">
             <a class="button-readmore" href="{{ post.url }}">
                 Ler
 
@@ -35,6 +39,6 @@
                 />
             </a>
 
-        </div>
+        </div> -->
     </div>
 </div>
