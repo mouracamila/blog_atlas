@@ -12,23 +12,16 @@ categoryPage = "blog/category"
 {% set post = blogPost.post %}
 
 <div id="article-page">
-
     <div class="article-body">
-
-
         <div id="article-page" class="ar">
-
             <div class="content-tags">
                 {% if post.categories.count %}
                     {% set categoryLinks = post.categories | map(c => "<a href=\"#{c.url}\">#{c.name}</a>") | join(', ') %}
                     {{ categoryLinks | raw }}
                 {% endif %}
             </div>
-
             <h1 class="post-title">{{post.title}}</h1>
-
             <h4 class="post-subtitle"> {{ post.summary | raw }}</h4>
-
 
             {% if post.featured_images.count %}
                 <div class="featured-images">
@@ -52,8 +45,6 @@ categoryPage = "blog/category"
             {{ post.content_html | raw }}
 
         </div>
-
-
         <div class="info">
             <h5>Por: Autor</h5>
             <h5>
@@ -71,19 +62,17 @@ categoryPage = "blog/category"
                 {% endif %}
             </h5>
         </div>
-
-
+        <div class="coments">
+            {% component 'disqus' %}
+        </div>
     </div>
-
 
     <div class="small-col">
         <div class="card-ads ads-big">
             adsense
         </div>
-
         <div class="other-articles">
             <h4 class="about-title">Publicações recentes</h4>
-
             <div class="feature-article">
                 <a href="#">
                     <img class="img-big" src="http://placekitten.com/g/250/188" alt="" >
@@ -92,7 +81,6 @@ categoryPage = "blog/category"
                 <a href="#" class="title">
                     <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, incidunt.</h4>
             </div>
-
             <div class="small-articles">
                 <a href="#">
                     <img class="img-small" src="http://placekitten.com/g/250/188" alt="" >
@@ -104,7 +92,6 @@ categoryPage = "blog/category"
                     </a>
                 </div>
             </div>
-
             <div class="small-articles">
                 <a href="#">
                     <img class="img-small" src="http://placekitten.com/g/250/188" alt="" >
@@ -116,13 +103,6 @@ categoryPage = "blog/category"
                     </a>
                 </div>
             </div>
-
         </div>
-
-
     </div>
-
-    <!-- <div class="coments">
-        {% component 'disqus' %}
-    </div> -->
 </div>

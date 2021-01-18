@@ -51,6 +51,7 @@ postPage = "blog-post"
     {% endif %}
 
     <section id="container">
+
         <div class="content-articles">
             {% for post in posts %}
                 {% if posts.currentPage == 1 and loop.index > 1 %}
@@ -111,6 +112,5 @@ postPage = "blog-post"
             </ul>
         </nav>
     {% endif %}
-
 
 </div>
