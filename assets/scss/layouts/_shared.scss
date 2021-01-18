@@ -13,6 +13,19 @@
 
 }
 
+figure {
+    max-width: 90rem;
+
+    figcaption {
+        font-size: 14px;
+        color: $color-secundary;
+        margin: 1rem 0;
+        border-left: solid 1px $color-secundary;
+        padding-left: 2rem;
+    }
+
+}
+
 .ads-big {
     width: 300px;
     height: 600px;
@@ -21,7 +34,7 @@
 
 .card-ads {
     color:#8f8f8f;
-    border: 1px solid white;
+    border: 1px solid $color-white;
     display: flex;
     align-items: center;
     justify-content: center;
