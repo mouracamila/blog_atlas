@@ -6,6 +6,8 @@ is_hidden = 0
 [blogPost]
 slug = "{{ :slug }}"
 categoryPage = "blog/category"
+
+[disqus]
 ==
 {% set post = blogPost.post %}
 
@@ -26,6 +28,7 @@ categoryPage = "blog/category"
             <h1 class="post-title">{{post.title}}</h1>
 
             <h4 class="post-subtitle"> {{ post.summary | raw }}</h4>
+
 
             {% if post.featured_images.count %}
                 <div class="featured-images">
@@ -51,22 +54,27 @@ categoryPage = "blog/category"
         </div>
 
 
-        <p class="info">
-            {% if post.categories.count %}
-                {% set categoryLinks = post.categories | map(c => "<a href=\"#{c.url}\">#{c.name}</a>") | join(', ') %}
+        <div class="info">
+            <h5>Por: Autor</h5>
+            <h5>
+                {% if post.categories.count %}
+                    {% set categoryLinks = post.categories | map(c => "<a href=\"#{c.url}\">#{c.name}</a>") | join(', ') %}
 
-                {{ 'rainlab.blog::lang.post.posted_byline' | trans({
-                    date: post.published_at | date('rainlab.blog::lang.post.date_format' | trans),
-                    categories: categoryLinks
-                }) }}
-            {% else %}
-                {{ 'rainlab.blog::lang.post.posted_byline_no_categories' | trans({
-                    date: post.published_at | date('rainlab.blog::lang.post.date_format'|trans)
-                }) }}
-            {% endif %}
-        </p>
+                    {{ 'rainlab.blog::lang.post.posted_byline' | trans({
+                        date: post.published_at | date('rainlab.blog::lang.post.date_format' | trans),
+                        categories: categoryLinks
+                    }) }}
+                {% else %}
+                    {{ 'rainlab.blog::lang.post.posted_byline_no_categories' | trans({
+                        date: post.published_at | date('rainlab.blog::lang.post.date_format'|trans)
+                    }) }}
+                {% endif %}
+            </h5>
+        </div>
+
 
     </div>
+
 
     <div class="small-col">
         <div class="card-ads ads-big">
@@ -113,4 +121,8 @@ categoryPage = "blog/category"
 
 
     </div>
+
+    <!-- <div class="coments">
+        {% component 'disqus' %}
+    </div> -->
 </div>
