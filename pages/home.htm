@@ -32,18 +32,23 @@ postPage = "blog-post"
 
         <div class="featured-box" >
             <div class="featured-text">
-                <h1 class="featured-title format-text one-line">
-                    {{ featured_post.title }}
-                </h1>
-                <div class="featured-resume format-text max-two-line">
-                    {{ featured_post.summary | raw }}
-                </div>
                 <div class="content-tags">
                     {% if featured_post.categories.count %}
                         {% set categoryLinks = featured_post.categories | map(c => "<a href=\"#{c.url}\">#{c.name}</a>") | join(', ') %}
                         {{ categoryLinks | raw }}
                     {% endif %}
                 </div>
+
+                <a class="featured-title format-text one-line" href="{{ post.url }}">
+                    <h1 >
+                        {{ featured_post.title }}
+                    </h1>
+                </a>
+
+                <a class="featured-resume format-text max-two-line" href="{{ post.url }}">
+                    {{ featured_post.summary | raw }}
+                </a>
+
             </div>
         </div>
 
