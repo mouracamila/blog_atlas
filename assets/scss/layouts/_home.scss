@@ -44,6 +44,10 @@ div#main {
         flex-direction: row;
         justify-content: space-between;
 
+        .content-articles{
+            max-width: 94rem;
+        }
+
 
         .content-ads {
             display: block;
