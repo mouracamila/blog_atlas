@@ -7,9 +7,10 @@ div#article-page{
         padding-right:5rem;
         float: left;
 
+
         .post-subtitle{
-            margin: 1rem 0 3rem;
-            line-height: 1.5;
+            margin: 1rem 0 6rem;
+            line-height: 1.9em;
         }
 
         .featured-images{
@@ -28,6 +29,30 @@ div#article-page{
             }
         }
 
+        .info{
+            margin: 6rem 0 9rem 0;
+        }
+
+        p{
+
+            & + p {
+                margin-bottom: 3rem;
+                line-height: 1.9em;
+            }
+        }
+
+        img{
+            max-width: 90rem;
+        }
+
+    }
+
+    .coments{
+        margin: 9rem 0;
+
+        .disqus-footer__wrapper{
+            display: none;
+        }
     }
 
     .small-col{
@@ -37,18 +62,20 @@ div#article-page{
         float: right;
         height: 100vh;
         align-items: center;
+        margin-top: 18rem;
 
         a{
             text-decoration: none;
         }
 
         .other-articles{
-
             margin-top: 2rem;
             border: solid 1px $color-white;
             padding: 2rem;
             background: white;
             border-radius: 9px;
+            position: sticky;
+
 
             .about-title{
                 margin-bottom: 2rem;
