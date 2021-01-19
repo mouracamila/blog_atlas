@@ -71,7 +71,6 @@ div#article-page{
             display: flex;
         }
 
-
         .about-title{
             margin-bottom: 2rem;
             text-align: center;
@@ -82,7 +81,7 @@ div#article-page{
         .title{
             color: $color-primary;
 
-            h4{
+            h3{
                 overflow: hidden;
                 text-overflow: ellipsis;
                 display: -webkit-box;
