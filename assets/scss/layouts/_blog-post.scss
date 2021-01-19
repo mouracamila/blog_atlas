@@ -55,6 +55,61 @@ div#article-page{
         }
     }
 
+    .other-articles{
+        margin-top: 2rem;
+        border: solid 1px $color-white;
+        padding: 2rem;
+        background: white;
+        border-radius: 9px;
+        position: sticky;
+
+        a{
+            text-decoration: none;
+        }
+
+        .content{
+            display: flex;
+        }
+
+
+        .about-title{
+            margin-bottom: 2rem;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        .title{
+            color: $color-primary;
+
+            h4{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+
+            }
+        }
+
+        .feature-article{
+            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+
+            .img-big{
+                height: 180px;
+                width: 250px;
+            }
+
+            .category{
+                margin: 2rem 0;
+            }
+        }
+
+    }
+
     .small-col{
         display: flex;
         flex-direction: column;
@@ -63,70 +118,6 @@ div#article-page{
         height: 100vh;
         align-items: center;
         margin-top: 18rem;
-
-        a{
-            text-decoration: none;
-        }
-
-        .other-articles{
-            margin-top: 2rem;
-            border: solid 1px $color-white;
-            padding: 2rem;
-            background: white;
-            border-radius: 9px;
-            position: sticky;
-
-
-            .about-title{
-                margin-bottom: 2rem;
-                text-align: center;
-                text-transform: uppercase;
-                font-weight: 400;
-            }
-
-            .title{
-                color: $color-primary;
-
-                h4{
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    display: -webkit-box;
-                    -webkit-box-orient: vertical;
-                    -webkit-line-clamp: 2;
-
-                }
-            }
-
-            .feature-article{
-                margin-bottom: 3rem;
-
-                .img-big{
-                    height: 180px;
-                    width: 260px;
-                }
-            }
-
-            .small-articles{
-                display: flex;
-
-
-                .img-small{
-                    height: 90px;
-                    width: 130px;
-                }
-
-                .info{
-                    padding-left: 1rem;
-                    align-self:center;
-                }
-
-                &+.small-articles{
-                    margin-top: 3rem;
-                }
-            }
-
-
-        }
 
     }
 
