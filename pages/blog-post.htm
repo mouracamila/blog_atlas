@@ -75,24 +75,34 @@ postPage = "blog/post"
             {% set next = nextAndPrev.nextPost %}
             <div class="prev-post">
             {% if prev %}
-                <a href="{{prev.url}}" title="{{ prev.title }}">Anterior</a>
+                <a href="{{prev.url}}" title="{{ prev.title }}">
+                    <img
+                    class="icon"
+                    src="{{ 'assets/icons/arrow-left.svg'|theme }}"
+                    alt=""
+                />
+                Anterior
+                </a>
             {% endif %}
             </div>
             <div class="next-post">
             {% if next %}
-                <a href="{{next.url}}" title="{{ next.title }}">Próximo</a>
+                <a href="{{next.url}}" title="{{ next.title }}">Próximo
+                    <img
+                    class="icon"
+                    src="{{ 'assets/icons/arrow-right.svg'|theme }}"
+                    alt=""
+                />
+                </a>
             {% endif %}
             </div>
         </div>
 
+        <hr>
 
         <div class="more-articles">
-
             <h3 class="about-title">Veja Também</h3>
-
             <div class="content">
-                <br>
-
                 {% for article in related %}
                 {% set image = article.featured_images.first %}
                     <div class="post-card">

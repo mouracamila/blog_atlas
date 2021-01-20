@@ -49,6 +49,12 @@ div#article-page{
     .nextandprev {
         display: flex;
         justify-content: space-between;
+        margin: 6rem 0;
+
+        a{
+            text-decoration: none;
+            color: $color-primary;
+        }
 
         .prev-post{
             text-align: left;
@@ -61,6 +67,7 @@ div#article-page{
 
 
     .more-articles{
+        margin-top: 6rem;
 
         a{
             text-decoration: none;
@@ -74,6 +81,7 @@ div#article-page{
 
         .content{
             display: flex;
+            justify-content: center;
         }
 
         .title{
