@@ -20,7 +20,7 @@ postPage = "blog/post"
 
 <div id="article-page">
     <div class="article-body">
-        <div id="article-page" class="ar">
+        <div class="article-content">
             <div class="content-tags">
                 {% if post.categories.count %}
                     {% set categoryLinks = post.categories | map(c => "<a href=\"#{c.url}\">#{c.name}</a>") | join(', ') %}
@@ -71,7 +71,18 @@ postPage = "blog/post"
         </div>
 
         <div class="nextandprev">
-            {% component 'nextAndPrev' %}
+            {% set prev = nextAndPrev.prevPost %}
+            {% set next = nextAndPrev.nextPost %}
+            <div class="prev-post">
+            {% if prev %}
+                <a href="{{prev.url}}" title="{{ prev.title }}">Anterior</a>
+            {% endif %}
+            </div>
+            <div class="next-post">
+            {% if next %}
+                <a href="{{next.url}}" title="{{ next.title }}">Próximo</a>
+            {% endif %}
+            </div>
         </div>
 
 
