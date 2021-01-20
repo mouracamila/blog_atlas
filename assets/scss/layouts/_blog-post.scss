@@ -7,7 +7,6 @@ div#article-page{
         padding-right:5rem;
         float: left;
 
-
         .post-subtitle{
             margin: 1rem 0 6rem;
             line-height: 1.9em;
@@ -47,39 +46,40 @@ div#article-page{
 
     }
 
-    .coments{
-        margin: 9rem 0;
+    .nextandprev {
+        display: flex;
+        justify-content: space-between;
 
-        .disqus-footer__wrapper{
-            display: none;
+        .prev-post{
+            text-align: left;
+        }
+
+        .next-post{
+            text-align: right;
         }
     }
 
-    .other-articles{
-        margin-top: 2rem;
-        border: solid 1px $color-white;
-        padding: 2rem;
-        background: white;
-        border-radius: 9px;
-        position: sticky;
+
+    .more-articles{
 
         a{
             text-decoration: none;
+        }
+
+        .about-title{
+            color: $color-secundary;
+            margin-bottom: 2rem;
+            text-align: center;
         }
 
         .content{
             display: flex;
         }
 
-        .about-title{
-            margin-bottom: 2rem;
-            text-align: center;
-            text-transform: uppercase;
-            font-weight: 400;
-        }
-
         .title{
             color: $color-primary;
+            margin-top: 1rem;
+            width: 250px;
 
             h3{
                 overflow: hidden;
@@ -88,23 +88,24 @@ div#article-page{
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 2;
 
+
             }
         }
 
-        .feature-article{
-            margin-bottom: 3rem;
+        .post-card{
+
             display: flex;
             flex-direction: column;
             padding: 2rem;
+
+            // border: solid 1px $color-white;
+            // border-radius: 9px;
 
             .img-big{
                 height: 180px;
                 width: 250px;
             }
 
-            .category{
-                margin: 2rem 0;
-            }
         }
 
     }
@@ -119,5 +120,15 @@ div#article-page{
         margin-top: 18rem;
 
     }
+
+
+    .coments{
+        margin: 9rem 0;
+
+        .disqus-footer__wrapper{
+            display: none;
+        }
+    }
+
 
 }
