@@ -8,6 +8,13 @@ slug = "{{ :slug }}"
 categoryPage = "blog/category"
 
 [disqus]
+
+[related]
+slug = "{{ :slug }}"
+
+[nextAndPrev]
+category = "current"
+postPage = "blog/post"
 ==
 {% set post = blogPost.post %}
 
@@ -62,35 +69,29 @@ categoryPage = "blog/category"
                 {% endif %}
             </h5>
         </div>
-        <div class="other-articles">
-            <h4 class="about-title">Veja Também</h4>
+
+        <div class="nextandprev">
+            {% component 'nextAndPrev' %}
+        </div>
+
+
+        <div class="more-articles">
+
+            <h3 class="about-title">Veja Também</h3>
 
             <div class="content">
+                <br>
 
-                <div class="feature-article">
-                    <a href="#">
-                        <img class="img-big" src="http://placekitten.com/g/250/188" alt="" >
-                    </a>
-                    <a href="#" class="category">category</a>
-                    <a href="#" class="title">
-                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, incidunt.</h3>
-                </div>
-                <div class="feature-article">
-                    <a href="#">
-                        <img class="img-big" src="http://placekitten.com/g/250/188" alt="" >
-                    </a>
-                    <a href="#" class="category">category</a>
-                    <a href="#" class="title">
-                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, incidunt.</h3>
-                </div>
-                <div class="feature-article">
-                    <a href="#">
-                        <img class="img-big" src="http://placekitten.com/g/250/188" alt="" >
-                    </a>
-                    <a href="#" class="category">category</a>
-                    <a href="#" class="title">
-                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, incidunt.</h3>
-                </div>
+                {% for article in related %}
+                {% set image = article.featured_images.first %}
+                    <div class="post-card">
+                        <a class="title" href="{{url('/', {'seo': article.slug})}}" title="{{article.title}}">
+                            <img class="img-big" src="{{ image.path }}" alt="{{article.title}}" />
+                            <h3 class="title">{{article.title}}</h>
+                        </a>
+                    </div>
+                {% endfor %}
+
             </div>
 
         </div>
