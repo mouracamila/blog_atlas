@@ -1,11 +1,11 @@
 
 div#article-page{
-    margin-top: 6rem;
+    margin-top: 9rem;
+    justify-content: center;
+    display: flex;
 
     .article-body{
-        width: calc(100% - 320px);
-        padding-right:5rem;
-        float: left;
+        max-width: 84rem;
 
         .post-subtitle{
             margin: 1rem 0 6rem;
@@ -16,7 +16,7 @@ div#article-page{
             margin-bottom: 3rem;
 
             .feature-img{
-                max-width: 760px;
+                display: flex;
             }
 
             .img-credits{
@@ -33,7 +33,6 @@ div#article-page{
         }
 
         p{
-
             & + p {
                 margin-bottom: 3rem;
                 line-height: 1.9em;
@@ -41,7 +40,7 @@ div#article-page{
         }
 
         img{
-            max-width: 90rem;
+            max-width: 100%;
         }
 
     }
@@ -105,9 +104,6 @@ div#article-page{
             display: flex;
             flex-direction: column;
             padding: 2rem;
-
-            // border: solid 1px $color-white;
-            // border-radius: 9px;
 
             .img-big{
                 height: 180px;
