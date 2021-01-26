@@ -9,6 +9,11 @@ body {
     padding: 0;
 }
 
+#layout-content {
+    display: flex;
+    max-width: 1900px;
+}
+
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
@@ -27,6 +32,10 @@ textarea,
 p {
     font-family: "Roboto", sans-serif;
     font-size: 18px;
+}
+
+button {
+    cursor: pointer;
 }
 
 h1,
@@ -51,3 +60,4 @@ h3 {
 h4{
     font-size: 1em;
 }
+

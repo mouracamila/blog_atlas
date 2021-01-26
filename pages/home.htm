@@ -5,7 +5,7 @@ is_hidden = 0
 
 [blogPosts]
 pageNumber = "{{ :page }}"
-postsPerPage = 5
+postsPerPage = 4
 noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
 categoryPage = "blog-post"
@@ -28,7 +28,7 @@ postPage = "blog-post"
         </style>
     {% endput %}
 
-    <section id="featured" class="card-article">
+    <section id="featured" class="card-article container">
 
         <div class="featured-box" >
             <div class="featured-text">
@@ -55,7 +55,7 @@ postPage = "blog-post"
     </section>
     {% endif %}
 
-    <section id="container">
+    <section id="posts-conteiner" class="container">
 
         <div class="content-articles">
             {% for post in posts %}
