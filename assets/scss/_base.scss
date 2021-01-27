@@ -12,6 +12,7 @@ body {
 #layout-content {
     display: flex;
     max-width: 1900px;
+    place-content: center;
 }
 
 html {
