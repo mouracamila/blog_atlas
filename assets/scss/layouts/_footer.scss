@@ -17,7 +17,7 @@ footer#layout-footer {
     .content-newslatter {
         background-color: $color-secundary;
         height: 24rem;
-        width: 100%;
+        width: auto;
         border-radius: 9px;
         position: relative;
         margin-bottom: -9rem;
@@ -46,6 +46,7 @@ footer#layout-footer {
         text-align: center;
         padding-bottom: 6rem;
         align-self: center;
+        width: 100%;
 
         h4{
             font-size: 1em;
@@ -130,6 +131,12 @@ footer#layout-footer {
         color: #8d8d8d;
         align-self:center;
         text-transform: uppercase;
+    }
+
+    @media (max-width: $breakpoint-md) {
+        .content-newslatter {
+            margin: 0 2rem -9rem;
+        }
     }
 
 }
