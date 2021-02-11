@@ -25,7 +25,11 @@ div#main {
 
             .featured-text {
                 height: 100%;
-                padding: 0 9rem;
+                padding: 0 9rem;$breakpoint-xs: 480px;
+                $breakpoint-sm: 768px;
+                $breakpoint-md: 992px;
+                $breakpoint-lg: 1280px;
+                $breakpoint-xl: 1441px;
                 display: flex;
                 flex-direction: column;
                 align-self: center;
@@ -155,6 +159,30 @@ div#main {
     .card-article {
         border-radius: 9px;
         border: solid 1px $color-white;
+    }
+
+    @media (max-width: $breakpoint-md) {
+
+        section#featured{
+            margin: 0 2rem 0 2rem;
+
+            .featured-box{
+                .featured-text{
+                    padding: 0 3rem;
+                }
+            }
+        }
+
+        section#posts-conteiner{
+            .content-ads{
+                display: none;
+            }
+
+        }
+
+        .card-article{
+            margin: 1rem 2rem;
+        }
     }
 
 }

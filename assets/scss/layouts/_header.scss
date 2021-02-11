@@ -3,7 +3,6 @@ header#layout-header {
     height: 9rem;
 
     .navbar {
-
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -13,9 +12,15 @@ header#layout-header {
         .nav-content {
             display: flex;
             align-content: center;
-            width: 100%;
+            align-items: center;
+            width: auto;
             height: 90px;
             justify-content: space-between;
+            width: 100%;
+
+            .logo{
+                max-width: 16rem;
+            }
         }
 
         .nav-seach{
@@ -58,4 +63,15 @@ header#layout-header {
             }
         }
     }
+
+    @media (max-width: $breakpoint-md) {
+
+        .input{
+            width: 20rem;
+        }
+
+
+    }
+
+
 }
