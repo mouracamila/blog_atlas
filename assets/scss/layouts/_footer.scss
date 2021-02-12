@@ -29,6 +29,12 @@ footer#layout-footer {
         .email-local {
             display: flex;
         }
+
+        .social{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     .content-footer {
@@ -68,6 +74,10 @@ footer#layout-footer {
     .footer-logo {
         margin-bottom: 2rem;
         display: flex;
+
+        .logo-icon{
+            height: 12rem;
+        }
     }
 
     .social-content {
@@ -136,6 +146,10 @@ footer#layout-footer {
     @media (max-width: $breakpoint-md) {
         .content-newslatter {
             margin: 0 2rem -9rem;
+        }
+
+        .whapper{
+            justify-content: space-around;
         }
     }
 
