@@ -66,8 +66,18 @@ header#layout-header {
 
     @media (max-width: $breakpoint-md) {
 
-        .input{
-            width: 20rem;
+        .navbar {
+            .nav-content {
+                justify-content: space-around;
+            }
+        }
+
+        .nav-links{
+            justify-content: flex-end;
+
+            ul{
+                padding-right: 3rem;
+            }
         }
 
 
