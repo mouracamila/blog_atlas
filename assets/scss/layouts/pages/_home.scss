@@ -1,0 +1,188 @@
+div#main {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+
+
+    section#welcome {
+        display: flex;
+        height: 12rem;
+        align-items: center;
+    }
+
+    section#featured {
+        height: 50rem;
+        background-color: $color-white;
+        background-size: cover;
+        display: flex;
+        align-items: flex-end;
+
+        .featured-box {
+            height: 26rem;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.411);
+
+            .featured-text {
+                height: 100%;
+                padding: 0 9rem;$breakpoint-xs: 480px;
+                $breakpoint-sm: 768px;
+                $breakpoint-md: 992px;
+                $breakpoint-lg: 1280px;
+                $breakpoint-xl: 1441px;
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                justify-content: center;
+
+                a{
+                    text-decoration: none;
+                }
+            }
+
+            .featured-title {
+                color: $color-primary;
+            }
+
+            .featured-resume {
+                margin: 1rem 0;
+                line-height: 1.5em;
+                font-size: 1.2em;
+                color: $color-primary;
+            }
+        }
+    }
+
+    section#posts-conteiner {
+        margin: 9rem 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .content-articles{
+            max-width: 94rem;
+        }
+
+        .content-ads {
+            display: block;
+            width: 300px;
+            margin-left: 6rem;
+
+            .ads-big {
+                height: 600px;
+            }
+
+            .ads-med {
+                margin-top: 3rem;
+                height: 253px;
+            }
+
+        }
+    }
+
+    .content-tags {
+        a {
+            color: $color-primary;
+
+            &:hover {
+                font-weight: bold;
+                color: rgb(228, 206, 9);
+            }
+        }
+    }
+
+    .pagination {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        margin-bottom: 13rem;
+
+        li {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: white;
+            border-radius: 9px;
+
+            & .pag-num {
+                border-radius: 9px;
+            }
+
+            &:hover {
+                background-color:$color-yellow;
+                border-radius: 50%;
+            }
+
+            a {
+                color: $color-primary;
+                text-decoration: none;
+            }
+
+            & + li {
+                margin-left: 3rem;
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                a {
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+
+    .format-text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+
+        &.one-line {
+            -webkit-line-clamp: 1;
+        }
+
+        &.max-two-line {
+            -webkit-line-clamp: 2;
+        }
+
+        &.max-three-line {
+            -webkit-line-clamp: 3;
+        }
+    }
+
+    .card-article {
+        border-radius: 9px;
+        border: solid 1px $color-white;
+    }
+
+    @media (max-width: $breakpoint-md) {
+
+        section#featured{
+            margin: 0 2rem 0 2rem;
+
+            .featured-box{
+                .featured-text{
+                    padding: 0 3rem;
+                }
+            }
+        }
+
+        section#posts-conteiner{
+            .content-ads{
+                display: none;
+            }
+
+        }
+
+        .card-article{
+            margin: 1rem 2rem;
+        }
+    }
+
+}
