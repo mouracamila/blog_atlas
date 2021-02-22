@@ -20,7 +20,7 @@ postPage = "blog/post"
 
 <div id="article-page">
     <div class="article-body ">
-        <div class="article-content">
+        <div class="article-content margin">
             <div class="content-tags">
                 {% if post.categories.count %}
                     {% set categoryLinks = post.categories | map(c => "<a href=\"#{c.url}\">#{c.name}</a>") | join(', ') %}
