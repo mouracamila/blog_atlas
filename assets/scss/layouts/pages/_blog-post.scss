@@ -53,6 +53,8 @@ div#article-page{
         a{
             text-decoration: none;
             color: $color-primary;
+            display: flex;
+            align-items: center;
         }
 
         .prev-post{
@@ -137,6 +139,13 @@ div#article-page{
 
     @media (max-width: $breakpoint-md) {
 
+        .article-body{
+
+            .info{
+                margin: 6rem 2rem;
+            }
+        }
+
         .small-col{
             display: none;
         }
@@ -147,9 +156,18 @@ div#article-page{
             }
         }
 
+        .nextandprev {
+            margin: 9rem 2rem;
+        }
+
         .margin{
             margin: 0 2rem;
         }
+
+        div#thread__container{
+            margin: 0 2rem;
+        }
+
     }
 
 

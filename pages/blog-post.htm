@@ -77,22 +77,28 @@ postPage = "blog/post"
             {% if prev %}
                 <a href="{{prev.url}}" title="{{ prev.title }}">
                     <img
-                    class="icon"
-                    src="{{ 'assets/icons/arrow-left.svg'|theme }}"
-                    alt=""
-                />
-                Anterior
+                        class="icon"
+                        src="{{ 'assets/icons/arrow-left.svg'|theme }}"
+                        alt=""
+                    />
+                    <h4>
+                        Anterior
+                    </h4>
+
                 </a>
             {% endif %}
             </div>
             <div class="next-post">
             {% if next %}
-                <a href="{{next.url}}" title="{{ next.title }}">Próximo
+                <a href="{{next.url}}" title="{{ next.title }}">
+                    <h4>
+                        Próximo
+                    </h4>
                     <img
-                    class="icon"
-                    src="{{ 'assets/icons/arrow-right.svg'|theme }}"
-                    alt=""
-                />
+                        class="icon"
+                        src="{{ 'assets/icons/arrow-right.svg'|theme }}"
+                        alt=""
+                    />
                 </a>
             {% endif %}
             </div>
