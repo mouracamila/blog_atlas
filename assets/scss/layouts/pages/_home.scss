@@ -25,11 +25,7 @@ div#main {
 
             .featured-text {
                 height: 100%;
-                padding: 0 9rem;$breakpoint-xs: 480px;
-                $breakpoint-sm: 768px;
-                $breakpoint-md: 992px;
-                $breakpoint-lg: 1280px;
-                $breakpoint-xl: 1441px;
+                padding: 0 9rem;
                 display: flex;
                 flex-direction: column;
                 align-self: center;
@@ -182,6 +178,15 @@ div#main {
 
         .card-article{
             margin: 1rem 2rem;
+        }
+    }
+
+    @media (max-width: $breakpoint-xs){
+
+        .content-articles{
+            .card-article{
+                flex-direction: column;
+            }
         }
     }
 

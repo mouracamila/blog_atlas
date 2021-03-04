@@ -174,5 +174,15 @@ div#article-page{
 
     }
 
+    @media (max-width: $breakpoint-xs) {
+
+        .more-articles{
+            .content{
+                flex-direction: column;
+            }
+        }
+
+    }
+
 
 }

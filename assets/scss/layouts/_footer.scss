@@ -153,4 +153,35 @@ footer#layout-footer {
         }
     }
 
+    @media (max-width: $breakpoint-xs) {
+        .content-newslatter{
+            flex-direction: column-reverse;
+            height: 50rem;
+
+            .email-local{
+                place-content: center;
+            }
+
+            .input{
+                width: 20rem;
+
+            }
+        }
+
+        .content-footer{
+            height: 60rem;
+        }
+
+        .whapper{
+            flex-direction: column;
+            align-items: center;
+
+            .contato{
+                margin-bottom: 4rem;
+            }
+        }
+
+
+    }
+
 }
